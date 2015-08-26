@@ -12,8 +12,19 @@
 */
 
 Route::get('/', function () {
-    return view('home.index');
+    return view('home');
 });
 
 Route::resource('lists', 'ListsController');
-Route::resource('category', 'CategoryController');
+Route::resource('posts', 'PostsController');
+Route::resource('comments', 'CommentsController');
+Route::resource('users', 'UsersController');
+// Route::group(['middleware' => 'auth'], function () {
+// 	Route::resource('category', 'CategoryController');
+// });
+Route::group(['middleware' => 'auth'], function () {
+	Route::group(['as' => 'admin::'], function () {
+	    Route::get('dashboard', ['as' => 'dashboard', 'uses' => 'admin\HomeController@index']);
+        Route::resource('category', 'CategoryController');
+	});
+});
