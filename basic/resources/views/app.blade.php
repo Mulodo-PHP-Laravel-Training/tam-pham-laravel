@@ -38,6 +38,7 @@
 					<li><a href="{{ url('/category') }}">Category</a></li>
 					<li><a href="{{ url('/category/create') }}">Add Category</a></li>
 					@endif
+					<li><a href="{{ url('/contact') }}">Contact</a></li>
 				</ul>
 
 				<ul class="nav navbar-nav navbar-right">

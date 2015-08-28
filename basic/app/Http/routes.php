@@ -19,6 +19,7 @@ Route::resource('lists', 'ListsController');
 Route::resource('posts', 'PostsController');
 Route::resource('comments', 'CommentsController');
 Route::resource('users', 'UsersController');
+Route::resource('contact', 'ContactController');
 // Route::group(['middleware' => 'auth'], function () {
 // 	Route::resource('category', 'CategoryController');
 // });
