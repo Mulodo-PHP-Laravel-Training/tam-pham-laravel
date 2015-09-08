@@ -29,3 +29,25 @@ Route::group(['middleware' => 'auth'], function () {
         Route::resource('category', 'CategoryController');
 	});
 });
+
+// Socialite Authentication
+Route::group ( [ 
+		'prefix' => 'socialite'
+], function () {
+	// facebook
+	Route::get('facebook', 'Auth\FacebookController@redirectToProvider');
+	Route::get('facebook/callback', 'Auth\FacebookController@handleProviderCallback');
+
+	// google
+	Route::get('google', 'Auth\GoogleController@redirectToProvider');
+	Route::get('google/callback', 'Auth\GoogleController@handleProviderCallback');
+
+	// twitter
+	Route::get('twitter', 'Auth\TwitterController@redirectToProvider');
+	Route::get('twitter/callback', 'Auth\TwitterController@handleProviderCallback');
+
+	// linkedin
+	Route::get('linkedin', 'Auth\LinkedinController@redirectToProvider');
+	Route::get('linkedin/callback', 'Auth\LinkedinController@handleProviderCallback');
+
+} );

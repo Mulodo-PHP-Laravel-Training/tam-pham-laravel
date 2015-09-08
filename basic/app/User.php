@@ -52,4 +52,22 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
     {
         return $this->hasMany('App\Comments', 'user_id', 'id');
     }
+
+    /**
+     * Return user if exists; create and return if doesn't
+     *
+     * @param $fbUser
+     * @return User
+     */
+    public static function findOrCreateUser($fbUser)
+    {
+        if ($authUser = User::where('email', $fbUser->email)->first()) {
+            return $authUser;
+        }
+
+        return User::create([
+            'name' => $fbUser->name,
+            'email' => $fbUser->email
+        ]);
+    }
 }

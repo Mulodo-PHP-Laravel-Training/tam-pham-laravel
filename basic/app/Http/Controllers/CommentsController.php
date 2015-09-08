@@ -17,7 +17,7 @@ class CommentsController extends Controller
      */
     public function index()
     {
-        //
+        // test ORM
         $comment = Comments::find(4);
         $post = $comment->post;
         $user = $comment->user;

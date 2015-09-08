@@ -17,7 +17,7 @@ class PostsController extends Controller
      */
     public function index()
     {
-        //
+        // test ORM
         $post = Posts::find(1);
         $user = $post->user;
         $comments = $post->comments;

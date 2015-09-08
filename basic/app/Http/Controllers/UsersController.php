@@ -17,7 +17,7 @@ class UsersController extends Controller
      */
     public function index()
     {
-        //
+        // test ORM
         $user = User::find(1);
         //get all post of user
         $posts = $user->posts;

@@ -39,6 +39,12 @@
 					<li><a href="{{ url('/category/create') }}">Add Category</a></li>
 					@endif
 					<li><a href="{{ url('/contact') }}">Contact</a></li>
+					@if (Auth::guest())
+					<li><a href="{{ url('/socialite/facebook') }}">Login with Facebook</a></li>
+					<li><a href="{{ url('/socialite/google') }}">Login with Google</a></li>
+					<li><a href="{{ url('/socialite/twitter') }}">Login with Twitter</a></li>
+					<li><a href="{{ url('/socialite/linkedin') }}">Login with Linkedin</a></li>
+					@endif
 				</ul>
 
 				<ul class="nav navbar-nav navbar-right">
