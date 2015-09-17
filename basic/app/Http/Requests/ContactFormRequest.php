@@ -32,7 +32,7 @@ class ContactFormRequest extends Request
         ];
     }
 
-    // overide
+    // 
     public function forbiddenResponse()
     {
         // Optionally, send a custom response on authorize failure 
